@@ -1,5 +1,3 @@
-# Final-project - Ironhack Data Analysis Bootcamp
-
 # BudgetHack
 
 # Description:
