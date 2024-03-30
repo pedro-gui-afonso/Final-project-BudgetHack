@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Dates</title>
+</head>
+<body>
+    <h2>Select Start and End Dates</h2>
+    <form action="/display_graph2" method="post">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+
+        <fieldset>
+            <legend>Type of Expense:</legend>
+            {% for expense_type in type_of_expenses %}
+                <label>
+                    <input type="checkbox" name="expense_type" value="{{ expense_type }}"> {{ expense_type }}
+                </label><br>
+            {% endfor %}
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

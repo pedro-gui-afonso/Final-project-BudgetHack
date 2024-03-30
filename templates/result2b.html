@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Graph and Allocate Bills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h3>Bills Assignment</h3>
+
+    <form action="/allocate_bills" method="POST">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <!--<th>Source</th>-->
+                    <th>Place</th>
+                    <th>Date of Expense</th>
+                    <th>Payer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in total_df.iterrows() %}
+                <tr>
+                    <td>{{ row['Type of Expense'] }}</td>
+                    <td>{{ row['Total to Pay'] }}</td>
+                    <!--<td>{{ row['Source'] }}</td>-->
+                    <td>{{ row['Place'] }}</td>
+                    <td>{{ row['Date of Expense'] }}</td>
+                    <td><input type="text" name="payer{{ index }}" placeholder="Payer"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Split Expenses</button>
+    </form>
+    <!-- Go Back button -->
+    <button onclick="goBack()">Back</button>
+
+    <!-- JavaScript function to go back to the previous page -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>    
+</body>
+</html>

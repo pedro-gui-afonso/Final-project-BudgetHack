@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Graph</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h3>Expense Tracker:</h3>
+    <!-- Include the filter form -->
+    <form action="/display_graph2" method="post">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" value="{% if start_date %}{{ start_date }}{% endif %}">
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" value="{% if end_date %}{{ end_date }}{% endif %}">
+
+        <!-- Expense type filter -->
+        <fieldset>
+            <legend>Type of Expense:</legend>
+            {% for expense_type in type_of_expenses %}
+                <label>
+                    <input type="checkbox" name="expense_type" value="{{ expense_type }}"> {{ expense_type }}
+                </label><br>
+            {% endfor %}
+        </fieldset>
+
+        <button type="submit">Filter</button>
+    </form>    
+    
+    <!-- Include the pie chart -->
+    <div class="image-container" style="background-color: rgb(36, 33, 33);">
+        <img src="data:image/png;base64,{{ graph_url }}" alt="Expenses Pie Chart">
+    </div>
+
+    <!-- Include the line chart -->
+    <div class="image-container" style="background-color: rgb(36, 33, 33);">
+        <img src="data:image/png;base64,{{ graph_url2 }}" alt="Expenses Line Chart">
+    </div>
+
+    <!-- Include the stacked bar chart -->
+    <div class="image-container" style="background-color: rgb(36, 33, 33);">
+        <img src="data:image/png;base64,{{ graph_url3 }}" alt="Expenses Stacked Bar Chart">
+    </div>
+
+    <!-- Display the table of expenses by type -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type of Expense</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for expense_type, total_amount in expenses_by_type.items() %}
+                <tr>
+                    <td>{{ expense_type }}</td>
+                    <td>{{ total_amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Go Back button -->
+    <button onclick="goBack()">Back</button>
+
+    <!-- JavaScript function to go back to the previous page -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>    
+</body>
+</html>

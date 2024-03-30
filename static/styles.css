@@ -1,0 +1,262 @@
+/* styles.css */
+
+/* Import Playfair Display font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #e9cdab;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    background-color: #dcad71;
+}
+
+nav img {
+    width: 100px;
+    height: auto;
+}
+  
+nav ul {
+    display: flex;
+    width: 20vw;
+    gap: 37vw;
+    list-style: none;
+}
+  
+nav ul a {
+    font-size: 24px;
+    color: beige;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 78px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 100px;
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+    font-size: 78px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+p {
+    color: #333;
+    text-align: center;
+    font-size: 48px;
+}
+
+button {
+    color: #333;
+    text-align:center;
+    font-size: 30px;
+    border-radius: 10px;
+    display:flex;
+    margin: 0 auto; 
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.button2 {
+    color: #333;
+    text-align: center;
+    width: 98px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+table {
+    color: #333;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    size: 20px;
+    width: 100%;
+    background-color: #ace2f7;
+}
+
+.table2 {
+    color: #333;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    size: 20px;
+    width: 100%;
+    background-color: #e2d1ab;
+}
+
+/* Table Header */
+.table2 th {
+    background-color:#beb36a; /* Light gray background */
+    color: #333; /* Dark gray text */
+    padding: 10px; /* Padding around table header cells */
+    border: 1px solid #beb36a; /* Add border to header cells */
+}
+
+/* Table Body */
+.table2 td {
+    padding: 8px; /* Padding around table cells */
+    border: 1px solid #ddd; /* Add border to table cells */
+}
+
+/* Alternating row colors */
+.table2 tbody tr:nth-child(even) {
+    background-color: #beb36a; /* Light gray background for even rows */
+}
+
+.table2 tbody tr:nth-child(odd) {
+    background-color: #caab5b; /* Light gray background for even rows */
+}
+
+/* Hover effect */
+.table2 tbody tr:hover {
+    background-color: #9a9b91; /* Lighter gray background on hover */
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Hide the default text for file input */
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+/* Style the custom button */
+.upload-button {
+    background-color: #b5a108;
+    color: #fff;
+    border: none;
+    padding: 2%;
+    padding-inline: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 40px;
+    display:inline;
+    margin-bottom: 50px;
+    width: 250px;
+    margin: 0 auto; 
+  }
+  
+  /* Apply hover effect */
+  .upload-button:hover {
+    background-color: #148f24;
+  }
+
+input[type="submit"] {
+    background-color: #b5a108;
+    color: #fff;
+    border: none;
+    padding: 2%;
+    padding-inline: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 40px;
+    display:inline;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+}
+
+input[type="date"] {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    display:inline-flex;
+    margin-bottom: 20px;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #148f24;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(13, 13, 14);
+}
+
+.table-container {
+    width: 45%;
+    height: 537px;
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(13, 13, 14);
+    margin-top: 10px;
+}
+
+fieldset {
+    margin-top: 20px;
+    border: none;
+}
+
+.image-container img {
+    width: 100%; /* Make the image fill the width of its container */
+    height: 100%; /* Make the image fill the height of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    background-color: #e2d1ab;
+}
+
+.table-container table {
+    width: 100%; /* Make the image fill the width of its container */
+    height: 100%; /* Make the image fill the height of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    background-color: #bcc0c4;
+    color: #333;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 auto; 
+    size: 20px;
+}
+
+.upload-button {
+    background-color: #b5a108;
+    color: #fff;
+    border: none;
+    padding-inline: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 40px;
+    display:flex;
+    margin-bottom: 50px;
+}
+
+/* CSS code for upload button hover effect */
+.upload-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+

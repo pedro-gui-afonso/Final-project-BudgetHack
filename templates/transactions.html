@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to your CSS file -->   
+</head>
+<body>
+    <h1>Transactions</h1>
+    <table class="table2" border="1">
+        <tr>
+            <th>Payer</th>
+            <th>Payee</th>
+            <th>Amount</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction[0] }}</td>
+            <td>{{ transaction[1] }}</td>
+            <td>{{ transaction[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- Go Back button -->
+    <button onclick="goBack()">Back</button>
+
+    <!-- JavaScript function to go back to the previous page -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Select your option:</h1>
+    <!-- Add buttons for displaying graph and splitting bills -->
+    {% if uploaded_bills %}
+    <form action="{{ url_for('display_graph2') }}" method="get">
+        <input type="submit" value="Expense Tracker">
+    </form>
+    <form action="{{ url_for('split_bills') }}" method="get">
+        <input type="submit" value="Split Expenses">
+    </form>
+    {% endif %}
+    <!-- Go Back button -->
+    <button onclick="goBack()">Back</button>
+
+    <!-- JavaScript function to go back to the previous page -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>    
+</body>
+</html>
